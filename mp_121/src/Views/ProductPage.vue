@@ -7,9 +7,9 @@
   <div>
     <br>
     <div class='row'>
-    <div class='column' v-for="product in productList" :key="product.name">
-      <product-card :item="product"/>
-    </div>
+      <div class='column' v-for="product in productList" :key="product.name">
+        <product-card :item="product"/>
+      </div>  
     </div>
     
   </div>
@@ -26,7 +26,7 @@ export default {
   name: 'HomePage',
   components: {
     ProductCard,
-    ToolBar
+    ToolBar,
   },
   data(){
     return{
@@ -38,8 +38,16 @@ export default {
         {name: 'Yae Miko', price: 99999, desc:'Yae Miko (Japanese: 八 や 重 え 神 み 子 こ Yae Miko), also known as Guuji Yae (Japanese: 宮 ぐう 司 じ Guuji, "chief priest") or the Guuji, is a playable Electro character in Genshin Impact.', imgLink:'https://styles.redditmedia.com/t5_4o6dm5/styles/communityIcon_jvryeuk453g81.png'},
         {name: 'Koichi Hirose', price: 15000, desc:'Stand User', imgLink:'https://i.pinimg.com/originals/26/9c/ba/269cba2b344bc9260e4028c93862dc6f.jpg'},
         {name: 'Shikimori Micchon', price: 30000, desc:'Student', imgLink:'https://i.pinimg.com/originals/d1/1f/08/d11f0895d77f067fa874c8743bd77eb1.jpg'}
-      ]
-      
+      ],
+      counter: 0,
+      cartList:[],
+    }
+  },
+  methods:{
+    addToCart(){
+      this.counter++;
+      this.$emit('addToCart', this.item.name, this.item.price, this.item.imgLink);
+      //creates a hidden div cart.
     }
   }
 }

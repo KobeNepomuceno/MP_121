@@ -38,6 +38,7 @@ export default{
     }
     .loginCard{
         margin: 0 10px;
+        margin-top: 10px;
         height: 135px;
         bottom: 40px;
         padding: 15px;
@@ -83,7 +84,7 @@ export default{
     @media screen and (max-width: 700px){
         .loginCard{
             width: 300px;
-            margin: 10px;
+            margin-bottom: 10px;
         }
         #field{
             width: 85%;
@@ -94,20 +95,23 @@ export default{
             left: 59%;
         }
         .loginRows{
-            width: 100;;
+            width: 100;
             padding: 0;
-            margin: auto;
+            margin: 0;
             list-style: none;
             display: flex;
             flex-wrap: wrap;
         }
         .loginColumns{
-            justify-content: space-between;
-            flex-direction: column;
-            margin: 0;
+            flex-direction: row;
+            margin: none;
             display: flex;
             flex-grow: 1;
             flex-basis: 300px;
+        }
+        #signup{
+            margin-left: 10px;
+            width: 350px;
         }
     }
 </style>
