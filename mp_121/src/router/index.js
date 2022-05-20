@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from '../Views/ProductPage.vue'
 
+
 const routes = [
     { /*login page*/
         path: '/',
@@ -16,6 +17,12 @@ const routes = [
         path: '/Seller',
         name: 'ProfilePage',
         component: () => import('../Views/SellerPage'),
+    },
+    {
+       /*Checkout Page or Cart*/
+       path: '/Checkout',
+       name: 'CheckoutCart',
+       component: () => import('../Views/Cart'), 
     }
 ]
 
